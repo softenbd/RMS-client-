@@ -1,0 +1,54 @@
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .transition500 {
+    @apply transition-all duration-500;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-yellow-light to-primary-light bg-clip-text text-transparent;
+  }
+}
+@layer components {
+  .description {
+    @apply text-neutral-800 text-base md:text-lg lg:text-xl;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-pink-600 bg-clip-text text-transparent;
+  }
+
+  h1 {
+    @apply text-4xl font-bold text-neutral-900 md:text-5xl lg:text-6xl text-[#000];
+  }
+
+  h2 {
+    @apply text-3xl font-semibold text-neutral-900 md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl font-medium text-neutral-900 md:text-3xl lg:text-4xl;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1d1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #393939;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
