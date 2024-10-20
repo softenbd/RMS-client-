@@ -2,7 +2,7 @@
 const Test = () => {
   return (
     <section>
-      Test
+      Test waiter... 
     </section>
   );
 };
