@@ -1,13 +1,9 @@
-import { Button } from "@/components/ui/button";
 import AdminDashboardCard from "./components/AdminDashboardCard";
-import { adminDashboardData } from "@/shared/constants/adminDashboard.constant";
 import {
   Salad,
   MessageCircleMore,
   HandCoins,
-  // FileUser,
   BadgePoundSterling,
-  UsersRound,
   UserRound,
   BookUser,
 } from "lucide-react";
