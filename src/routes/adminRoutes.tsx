@@ -9,14 +9,9 @@ export const adminRoutes: TSidebarPath[] = [
     name: "Manage Tables",
     children: [
       {
-        name: "All Tables",
-        path: "/all-tables",
-        element: <p>Create Menu Page</p>,
-      },
-      {
-        name: "See All Menus",
-        path: "/menu-management/all",
-        element: <p>All Menus Page</p>,
+        name: "All Table",
+        path: "all-tables",
+        element: <AllTables />,
       },
     ],
   },
