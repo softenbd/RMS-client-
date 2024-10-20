@@ -6,10 +6,16 @@ import { Home, Inbox, Calendar, Search, Settings } from "lucide-react";
 
 export const adminRoutes: TSidebarPath[] = [
   {
-    name: "Manage Tables",
+    name: "Dashboard",
+    path: "/",
+    icon: Home,
+    element: <AdminDashboard />,
+  },
+  {
+    name: "Manage Table",
     children: [
       {
-        name: "All Table",
+        name: "All Tables",
         path: "all-tables",
         element: <AllTables />,
       },
