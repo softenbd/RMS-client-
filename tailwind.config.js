@@ -36,6 +36,17 @@ module.exports = {
           "soft-yellow": "#FFF8DC",
           "soft-beige": "#F5F5DC",
           "soft-pink": "#FFD1DC",
+          "dark-navy": "#001F3F",
+          "dark-teal": "#004D40",
+          "deep-purple": "#4A148C",
+          "rich-maroon": "#800000",
+          "bold-orange": "#FF5722",
+          "vivid-blue": "#1A237E",
+          "strong-olive": "#3D9970",
+          "dark-slate": "#2E2E2E",
+          "intense-red": "#B71C1C",
+          "dark-indigo": "#1A237E",
+
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
