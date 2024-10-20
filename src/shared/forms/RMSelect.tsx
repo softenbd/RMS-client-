@@ -1,5 +1,4 @@
-
-import { Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 import { TFormSelectProps } from "./types";
 
 import {
@@ -17,16 +16,21 @@ const RMSelect = ({
   disabled,
   placeholder,
 }: TFormSelectProps): JSX.Element => {
+  const {
+    formState: { errors },
+  } = useFormContext();
+
+
   return (
     <Controller
       name={name}
       defaultValue={defaultValue}
-      render={({ field, fieldState: { error } }) => (
+      render={({ field }) => (
         <div>
           <Select
             disabled={disabled}
             onValueChange={field.onChange}
-            value={field.value} 
+            value={field.value}
           >
             <SelectTrigger className="w-full">
               <SelectValue placeholder={placeholder} />
@@ -39,7 +43,13 @@ const RMSelect = ({
               ))}
             </SelectContent>
           </Select>
-          {error && <small style={{ color: "red" }}>{error.message}</small>}
+          <>
+            {errors && typeof errors[name]?.message === "string" ? (
+              <small className="text-red-500">{errors[name]?.message}</small>
+            ) : (
+              ""
+            )}
+          </>
         </div>
       )}
     />

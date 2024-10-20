@@ -15,6 +15,7 @@ import RMForm from "@/shared/forms/RMForm";
 import RMInput from "@/shared/forms/RMInput";
 import { Button } from "@/components/ui/button";
 import SidePanel from "./components/SidePanel";
+import RMDatePicker from "@/shared/forms/RMDatePicker";
 
 function SignIn() {
   const [login] = useLoginMutation();
@@ -63,7 +64,7 @@ function SignIn() {
           <RMForm onSubmit={handleSignIn} className="space-y-4">
             <RMInput type="text" label="Email" name="email" />
             <RMInput type="text" label="Password" name="password" />
-
+            <RMDatePicker name="date"/>
             <RememberAndForgetPassword />
             <Button
               type="submit"
