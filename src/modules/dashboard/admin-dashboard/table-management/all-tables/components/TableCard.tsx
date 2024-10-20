@@ -15,13 +15,13 @@ interface TableCardProps {
 const TableCard: React.FC<TableCardProps> = ({ table, status, color }) => {
   return (
     <Card
-      className={`bg-slate-800/90 group h-full cursor-pointer rounded-lg ${
-        color && `bg-${color} `
+      className={`group h-full cursor-pointer rounded-lg ${
+        color && `${color}`
       }`}
     >
       <CardHeader>
-        <CardTitle className="text-white text-3xl font-semibold flex flex-row  justify-between    items-center gap-3">
-          Table{" "}
+        <CardTitle className="text-white text-3xl font-semibold flex flex-row  justify-between items-center gap-3">
+          Table
           <span
             className={`text-4xl font-extrabold bg-white text-orange-500 w-14 flex items-center justify-center rounded-full group-hover:scale-110 duration-300 h-14`}
           >
