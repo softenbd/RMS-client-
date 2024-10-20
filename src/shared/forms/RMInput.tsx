@@ -1,26 +1,27 @@
-
-import { Controller } from "react-hook-form";
-
-
+import { Controller, useFormContext } from "react-hook-form";
 import InputError from "../ui/inputError";
 import { Input } from "@/components/ui/input";
-type TInputProps = {
-  type?: string;
-  name: string;
-  label?: string;
-  className?: string;
-  defaultValue?: any;
-  errorObj?: {
-    error?: string;
-    message?: string;
-  };
-};
+import { TInputProps } from "./types";
 
-const RMInput = ({ type = 'text', name, label, className, defaultValue, errorObj }: TInputProps) => {
+interface Iprops extends TInputProps {
+  placeholder: string;
+}
+
+const RMInput = ({
+  type = "text",
+  name,
+  className,
+  defaultValue = "",
+  placeholder,
+}: Iprops) => {
   const { theme } = { theme: "dark" };
+  const {
+    formState: { errors },
+  } = useFormContext();
+
+
 
   return (
-    
     <div>
       <Controller
         name={name}
@@ -28,24 +29,34 @@ const RMInput = ({ type = 'text', name, label, className, defaultValue, errorObj
         render={({ field }) => (
           <Input
             autoComplete="off"
-            placeholder={label}
+            placeholder={placeholder}
             className={`
               ${className}
               ${
                 theme === "dark"
-                  ? "bg-[#fff] shadow placeholder:text-[#8f8f8f] placeholder:text-sm border-none hover:bg-[#f7f7f7] focus-within:bg-[#fff]  text-[black] !text-[15px] p-2"
+                  ? "bg-[#fff] shadow placeholder:text-[#8f8f8f] placeholder:text-sm border-none hover:bg-[#f7f7f7] focus-within:bg-[#fff] text-[black] !text-[15px] p-2"
                   : ""
               }
-              text-xl`}
+              text-xl
+            `}
             {...field}
             type={type}
             id={name}
           />
-        )}
-      />
-      {errorObj?.error && errorObj?.error === name && <InputError errorText={errorObj?.message} />}
-    </div>
 
+          
+        )}
+        
+      />
+      <>
+        {errors && typeof errors[name]?.message === "string"
+          ? <small className="text-red-500">{errors[name]?.message}</small>
+          : ""}
+      </>
+
+
+      
+    </div>
   );
 };
 
