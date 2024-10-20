@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { TInputProps } from "./types";
 
 interface Iprops extends TInputProps {
-  placeholder: string;
+  placeholder?: string;
 }
 
 const RMInput = ({
