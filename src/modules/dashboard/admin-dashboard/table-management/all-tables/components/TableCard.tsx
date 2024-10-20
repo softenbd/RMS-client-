@@ -15,7 +15,7 @@ interface TableCardProps {
 const TableCard: React.FC<TableCardProps> = ({ table, status, color }) => {
   return (
     <Card
-      className={`bg-slate-800 group h-full cursor-pointer rounded-lg ${
+      className={`bg-slate-800/90 group h-full cursor-pointer rounded-lg ${
         color && `bg-${color} `
       }`}
     >
