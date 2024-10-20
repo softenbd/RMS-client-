@@ -1,5 +1,6 @@
 
 
+import Test from "@/modules/test/components/Test";
 import { TSidebarPath } from "@/types/sidebar";
 import { Home, Inbox, Calendar, Search, Settings } from "lucide-react";
 
@@ -48,5 +49,11 @@ export const customersRoutes: TSidebarPath[] = [
     path: "/settings",
     icon: Settings,
     element: <p>Settings Page</p>, 
+  },
+  {
+    name: "Test",
+    path: "/test",
+    icon: Settings,
+    element: <Test/>, 
   },
 ];
