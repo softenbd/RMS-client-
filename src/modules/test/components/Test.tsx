@@ -2,7 +2,11 @@ import { Button } from "@/components/ui/button";
 import { testSchema } from "@/schema/example";
 import RMDatePicker from "@/shared/forms/RMDatePicker";
 import RMForm from "@/shared/forms/RMForm";
+import RMInput from "@/shared/forms/RMInput";
 import RMSelect from "@/shared/forms/RMSelect";
+import RMTextArea from "@/shared/forms/RMTextArea";
+import RMTimePicker from "@/shared/forms/time/RMTimePicker";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 
 
@@ -25,9 +29,12 @@ const Test = () => {
   return (
     <div>
       <RMForm onSubmit={handleTestForm}  resolver={zodResolver(testSchema)} >
-        <div className="grid grid-cols-2 gap-8 p-2 w-full justify-between">
-        <RMSelect placeholder="select" name="select" options={options} />
+        <div className="grid sm:grid-cols-2 gap-3 w-full ">
+        <RMInput name="input" placeholder="test-input"/>
+        <RMSelect placeholder="test-select" name="select" options={options} />
         <RMDatePicker name="date"/>
+        <RMTimePicker name="time" label="time"/>
+        <RMTextArea name="text-area" placeholder="message"/>
         </div>
         <Button type="submit">submit</Button>
       </RMForm>
@@ -36,5 +43,3 @@ const Test = () => {
 };
 
 export default Test;
-
-
