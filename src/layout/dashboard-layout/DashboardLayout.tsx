@@ -18,7 +18,7 @@ import { ROLE } from "@/shared/constants/global";
 
 // Main DashboardLayout Component
 export function DashboardLayout() {
-  const role: string = "admin";
+  const role: string = "customer";
   let items = customersRoutes;
 
   // role based sidebar routes

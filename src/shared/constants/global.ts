@@ -3,5 +3,5 @@ export const ROLE = {
     CHEF: 'chef',
     WAITER: 'waiter',
     ADMIN: 'admin',
-}
+} as const
 
