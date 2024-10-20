@@ -1,5 +1,6 @@
 import AdminDashboard from "@/modules/dashboard/admin-dashboard/dashboard/AdminDashboard";
 import AllTables from "@/modules/dashboard/admin-dashboard/table-management/all-tables/AllTables";
+
 import { TSidebarPath } from "@/types/sidebar";
 import { Home, Inbox, Calendar, Search, Settings } from "lucide-react";
 
