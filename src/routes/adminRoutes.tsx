@@ -1,4 +1,5 @@
 import AdminDashboard from "@/modules/dashboard/admin-dashboard/dashboard/AdminDashboard";
+import AllMenus from "@/modules/dashboard/admin-dashboard/menu-management/all-menus/AllMenus";
 import AllTables from "@/modules/dashboard/admin-dashboard/table-management/all-tables/AllTables";
 import Test from "@/modules/test/components/Test";
 
@@ -19,6 +20,18 @@ export const adminRoutes: TSidebarPath[] = [
         name: "All Tables",
         path: "all-tables",
         element: <AllTables />,
+      },
+    ],
+  },
+
+
+  {
+    name: "Menu Management",
+    children: [
+      {
+        name: "All Menus",
+        path: "all-menus",
+        element: <AllMenus />,
       },
     ],
   },

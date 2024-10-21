@@ -1,7 +1,4 @@
 import Logo from "../../shared/ui/Logo";
-
-import { FieldValues, SubmitHandler } from "react-hook-form";
-
 import { Link, useNavigate } from "react-router-dom";
 
 import { useSignUpMutation } from "../../redux/features/auth/authApi";
@@ -13,12 +10,13 @@ import RMForm from "@/shared/forms/RMForm";
 import RMInput from "@/shared/forms/RMInput";
 import { Button } from "@/components/ui/button";
 import SidePanel from "./components/SidePanel";
+import { FormSubmitHandler } from "@/shared/forms/types";
 
 function Signup() {
   const [signUp] = useSignUpMutation();
   const navigate = useNavigate();
 
-  const hanleSignUp: SubmitHandler<FieldValues> = async (data) => {
+  const hanleSignUp:FormSubmitHandler = async (data) => {
     if (!validateFieldsOfSingUpForm(data)) {
       toast.warning("Please fill out all required fields.");
       return;

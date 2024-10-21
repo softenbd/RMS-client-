@@ -1,5 +1,4 @@
 import { Controller, useFormContext } from "react-hook-form";
-import InputError from "../ui/inputError";
 import { Input } from "@/components/ui/input";
 import { TInputProps } from "./types";
 
