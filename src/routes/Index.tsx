@@ -1,22 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 
-
 import NotFoundPage from "../modules/not-found/NotFoundPage";
 import App from "../App";
 import Signup from "../modules/signin-signup/SignUp";
 import SignIn from "../modules/signin-signup/SignIn";
 import { routeGenerator } from "../utils/routesGenerator";
 import { customersRoutes } from "./customersRoutes";
-
-
+import { adminRoutes } from "./adminRoutes";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: routeGenerator(customersRoutes),
+    children: routeGenerator(adminRoutes),
   },
-  
+
   // {
   //   path: "/user/dashboard",
   //   element: (
@@ -26,7 +24,7 @@ const router = createBrowserRouter([
   //   ),
   //   children: routeGenerator(userDashboardPaths),
   // },
-  
+
   {
     path: "/sign-up",
     element: <Signup />,

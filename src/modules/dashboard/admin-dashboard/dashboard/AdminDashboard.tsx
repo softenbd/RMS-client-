@@ -1,0 +1,55 @@
+import AdminDashboardCard from "./components/AdminDashboardCard";
+import {
+  Salad,
+  MessageCircleMore,
+  HandCoins,
+  BadgePoundSterling,
+  UserRound,
+  BookUser,
+} from "lucide-react";
+
+const AdminDashboard = () => {
+  return (
+    <div className="p-5  min-h-[calc(100vh-40px)] overflow-y-auto max-h-[calc(100vh-40px)] ">
+      <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 items-stretch">
+        <AdminDashboardCard
+          title={"Running Table"}
+          number={30}
+          icon={Salad}
+          className={"bg-card-soft-pink"}
+        />
+        <AdminDashboardCard
+          title={"Help-Request form"}
+          number={20}
+          icon={MessageCircleMore}
+          className={"bg-card-soft-blue"}
+        />
+        <AdminDashboardCard
+          title={"Today Total Sales"}
+          number={20}
+          icon={HandCoins}
+          className={"bg-card-soft-green"}
+        />
+        <AdminDashboardCard
+          title={"Today Total Customer"}
+          number={20}
+          icon={BookUser}
+          className={"bg-card-soft-gray"}
+        />
+        <AdminDashboardCard
+          title={"This Month Total Sales"}
+          number={20}
+          icon={BadgePoundSterling}
+          className={"bg-card-soft-yellow"}
+        />
+        <AdminDashboardCard
+          title={"This Month Total Customer"}
+          number={20}
+          icon={UserRound}
+          className={"bg-card-soft-beige"}
+        />
+      </div>
+    </div>
+  );
+};
+export default AdminDashboard;
