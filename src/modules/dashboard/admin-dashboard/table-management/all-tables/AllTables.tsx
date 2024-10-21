@@ -1,8 +1,9 @@
+import { NavLink } from "react-router-dom";
 import TableCard from "./components/TableCard";
 
 const AllTables = () => {
   return (
-    <div className="p-5 border-2  min-h-[calc(100vh-40px)] overflow-y-auto max-h-[calc(100vh-40px)] ">
+    <div className="p-5 border-2  min-h-[calc(100vh-40px)] overflow-y-auto max-h-[calc(100vh-40px)]">
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 items-stretch">
         <TableCard status={"Booked"} table={1} color={"bg-card-dark-navy"} />
         <TableCard status={"Vacancy"} table={2} color={"bg-card-dark-teal"} />

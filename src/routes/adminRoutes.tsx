@@ -1,5 +1,6 @@
 import AdminDashboard from "@/modules/dashboard/admin-dashboard/dashboard/AdminDashboard";
 import AllTables from "@/modules/dashboard/admin-dashboard/table-management/all-tables/AllTables";
+import TableDetails from "@/modules/dashboard/admin-dashboard/table-management/table-details/TableDetails";
 
 import { TSidebarPath } from "@/types/sidebar";
 import { Home, Inbox, Calendar, Search, Settings } from "lucide-react";
@@ -18,6 +19,11 @@ export const adminRoutes: TSidebarPath[] = [
         name: "All Tables",
         path: "all-tables",
         element: <AllTables />,
+      },
+      {
+        name: "Table Details",
+        path: "table/:id",
+        element: <TableDetails />,
       },
     ],
   },
