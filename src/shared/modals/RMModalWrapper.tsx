@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -10,7 +10,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden"; // Import VisuallyHidden
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface ReusableModalProps {
   triggerText: string;
@@ -19,7 +19,8 @@ interface ReusableModalProps {
   cancelButtonText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
-  title?: string; // Add title for accessibility
+  title?: string;
+  modalFooter?: ReactNode;
 }
 
 const RMModalWrapper: React.FC<ReusableModalProps> = ({
@@ -29,7 +30,8 @@ const RMModalWrapper: React.FC<ReusableModalProps> = ({
   cancelButtonText = "Cancel",
   onConfirm,
   onCancel,
-  title = "Confirmation", 
+  title = "Confirmation",
+  modalFooter = true,
 }) => {
   return (
     <AlertDialog>
@@ -46,17 +48,23 @@ const RMModalWrapper: React.FC<ReusableModalProps> = ({
           {/* Children passed here will be used as modal content */}
           {children}
         </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel onClick={onCancel}>
-            {cancelButtonText}
-          </AlertDialogCancel>
-          <AlertDialogAction onClick={onConfirm}>
-            {confirmButtonText}
-          </AlertDialogAction>
-        </AlertDialogFooter>
+        {modalFooter ? (
+          <AlertDialogFooter className="pt-4">
+            <AlertDialogCancel onClick={onCancel}>
+              {cancelButtonText}
+            </AlertDialogCancel>
+            <AlertDialogAction onClick={onConfirm}>
+              {confirmButtonText}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        ) : (
+          <></>
+        )}
       </AlertDialogContent>
     </AlertDialog>
   );
 };
 
 export default RMModalWrapper;
+
+

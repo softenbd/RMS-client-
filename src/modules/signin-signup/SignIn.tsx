@@ -1,6 +1,6 @@
 import Logo from "../../shared/ui/Logo";
 
-import { FieldValues, SubmitHandler } from "react-hook-form";
+
 
 import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../redux/features/auth/authApi";
@@ -16,16 +16,15 @@ import RMInput from "@/shared/forms/RMInput";
 import { Button } from "@/components/ui/button";
 import SidePanel from "./components/SidePanel";
 import RMDatePicker from "@/shared/forms/RMDatePicker";
+import { FormSubmitHandler } from "@/shared/forms/types";
 
 function SignIn() {
   const [login] = useLoginMutation();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleSignIn: SubmitHandler<FieldValues> = async (data) => {
+  const handleSignIn:FormSubmitHandler = async (data) => {
 
-
-    
     console.log(data)
     
     // if (!validateFieldsOfLoginForm(data)) {

@@ -52,7 +52,7 @@ const RMForm = ({
   return (
     <FormProvider {...methods}>
       <form
-        className={`${className}`}
+        className={`${className} space-y-3`}
         onSubmit={methods.handleSubmit(submit)}
       >
         {children}

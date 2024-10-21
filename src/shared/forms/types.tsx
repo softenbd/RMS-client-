@@ -1,3 +1,7 @@
+import { SubmitHandler, FieldValues } from "react-hook-form";
+
+export type FormSubmitHandler = SubmitHandler<FieldValues>;
+
 export type TFormSelectProps = {
   label?: string;
   name: string;
@@ -20,3 +24,5 @@ export interface TInputProps {
     message?: string;
   };
 }
+
+

@@ -6,12 +6,13 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#22C55E",
           light: "#5ADCE0",
           dark: "#008A96",
           foreground: "hsl(var(--primary-foreground))",
         },
         gray: {
+          50: '#F7F8FA',
           100: "#F5F5F5",
           200: "#E5E5E5",
           500: "#989898",
